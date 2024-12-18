@@ -301,17 +301,6 @@ Each hook function must accept two arguments: NICKNAME and MESSAGE."
   (add-to-list 'erc-modules 'ercn 'appending)
   (erc-update-modules))
 
-;; For first time use
-;;;###autoload
-(when (boundp 'erc-modules)
-  (ercn--add-erc-module))
-
 (provide 'ercn)
-
-;;;###autoload
-(eval-after-load 'erc
-  '(progn
-     (require 'ercn)
-     (ercn--add-erc-module)))
 
 ;;; ercn.el ends here
